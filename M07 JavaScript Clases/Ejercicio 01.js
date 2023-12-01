@@ -9,9 +9,24 @@ function crearUsuario() {
    // Este método debe retornar el string: 'Hola, mi nombre es {{nombre}}'.
    // El valor {{nombre}} debe ser el nombre definido para la instancia de la clase.
    // Retornar la clase.
-   // Tu código:
-   
+   // Tu códigoo:
+
+   class usuario {
+      constructor(usuario, nombre, email, password) {
+      this.usuario= usuario;
+      this.nombre= nombre;
+      this.email= email ;
+      this.password= password;
+   }
+   saludar (){
+
+      return "Hola, mi nombre es" + this.nombre;
+   }
+
+   }
+   return usuario;
 }
+
 
 function agregarMetodoPrototype(Usuario) {
    // Agrega un método al prototipo de "Usuario".
