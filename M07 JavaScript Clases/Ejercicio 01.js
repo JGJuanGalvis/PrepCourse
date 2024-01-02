@@ -17,14 +17,16 @@ function crearUsuario() {
       this.nombre= nombre;
       this.email= email ;
       this.password= password;
+     
    }
    saludar (){
 
-      return "Hola, mi nombre es" + this.nombre;
+      return "Hola, mi nombre es " + this.nombre;
    }
 
    }
    return usuario;
+   
 }
 
 
@@ -32,6 +34,12 @@ function agregarMetodoPrototype(Usuario) {
    // Agrega un método al prototipo de "Usuario".
    // El método debe llamarse "saludar" y debe devolver el string "Hello World!".
    // Tu código:
+   class usuario{
+   saludar (){
+
+      return "Hello World!";
+   }
+}
 }
 
 function agregarStringInvertida() {
