@@ -15,6 +15,7 @@ function crearGato(nombre, edad) {
 
 
    };
+   
    return Gato;
 }
 var resultado_58=crearGato("juan",12);
