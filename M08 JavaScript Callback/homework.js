@@ -70,7 +70,7 @@ function map(array, cb) {
    }
    return nuevoarry;
 
-    //const arr = array.map ((elemento) ==> cb(elemento));
+    //const arr = array.map ((elemento) => cb(elemento));
      //return arr; 
 }
 
