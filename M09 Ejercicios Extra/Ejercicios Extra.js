@@ -6,6 +6,19 @@ function deObjetoAarray(objeto) {
    // Estos elementos debe ser cada par clave:valor del objeto recibido.
    // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
    // Tu código:
+   
+   const arregloResultante = [];
+
+    for (const clave in objeto) {
+        if (objeto.hasOwnProperty(clave)) {
+         
+            arregloResultante.push([clave, objeto[clave]]);
+        }
+
+    }
+
+    return arregloResultante;
+
 }
 
 function numberOfCharacters(string) {
@@ -14,6 +27,31 @@ function numberOfCharacters(string) {
    // Las letras deben estar en orden alfabético.
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
    // Tu código:
+   const frecuenciaLetras = {};
+
+   // Recorre el string y cuenta la frecuencia de cada letra
+   for (let i = 0; i < string.length; i++) {
+       const letra = string[i];
+
+       // Verifica si la letra ya está en el objeto, si no, inicializa su frecuencia en 1
+       if (frecuenciaLetras.hasOwnProperty(letra)) {
+           frecuenciaLetras[letra]++;
+       } else {
+           frecuenciaLetras[letra] = 1;
+       }
+   }
+
+   // Ordena las letras alfabéticamente en el objeto resultante
+   const letrasOrdenadas = Object.keys(frecuenciaLetras).sort();
+   const resultado = {};
+
+   // Construye el objeto resultante con las letras ordenadas y sus frecuencias
+   for (const letra of letrasOrdenadas) {
+       resultado[letra] = frecuenciaLetras[letra];
+   }
+
+   return resultado;
+
 }
 
 function capToFront(string) {
@@ -22,6 +60,24 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+
+   let mayusculas = '';
+   let minusculas = '';
+
+   // Separar las letras en mayúscula y minúscula
+   for (let i = 0; i < string.length; i++) {
+       const letra = string[i];
+
+       if (letra === letra.toUpperCase()) {
+           mayusculas += letra;
+       } else {
+           minusculas += letra;
+       }
+   }
+
+   // Combinar las letras en mayúscula y minúscula y retornar el resultado
+   return mayusculas + minusculas;
+
 }
 
 function asAmirror(frase) {
@@ -29,12 +85,33 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+  
+   const palabras = frase.split(' ');
+  
+
+   const fraseInvertida = palabras.map(palabra => palabra.split('').reverse().join('')).join(' ');
+   return fraseInvertida;
+
+   
 }
+
 
 function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   const cadenaNumero = numero.toString();
+   const longitud = cadenaNumero.length;
+
+   for (let i = 0; i < longitud / 2; i++) {
+       if (cadenaNumero[i] !== cadenaNumero[longitud - 1 - i]) {
+           return "No es capicua";
+       }
+   }
+
+   return "Es capicua";
+   
+
 }
 
 function deleteAbc(string) {
